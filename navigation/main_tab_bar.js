@@ -7,7 +7,6 @@ import About from '../components/about';
 import SearchTab from './search_tab';
 
 const Tab = createBottomTabNavigator();
-
 const MainTabBar = () => {
   return (
     <NavigationContainer>
