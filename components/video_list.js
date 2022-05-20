@@ -25,21 +25,22 @@ class VideoList extends Component {
     this.renderVideoCell = this.renderVideoCell.bind(this);
   }
   // ======================================================
-//   componentDidMount() {
-//     this.fetchData();
-//   }
+  componentDidMount() {
+    this.fetchData();
+  }
 
-//   fetchData() {
-//     youtubeSearch(this.state.query)
-//       .then((responseData) => {
-//         this.setState({
-//           dataSource: responseData,
-//           isLoading: false,
-//         });
-//       }).catch((error) => {
-//         console.log(error);
-//       });
-//   }
+  fetchData() {
+    youtubeSearch(this.state.query)
+      .then((responseData) => {
+        this.setState({
+          dataSource: responseData,
+          isLoading: false,
+        });
+      }).catch((error) => {
+        console.log(error);
+      });
+  }
+
   // ========================================================
   showVideoDetail(video) {
     // pass in video into this.props.navigation.state.params.video in navigated view
@@ -103,44 +104,44 @@ class VideoList extends Component {
 }
 
 // ============= STYLE ==============
-// const styles = StyleSheet.create({
-//     container: {
-//       flex: 1,
-//       flexDirection: 'row',
-//       backgroundColor: 'rgb(240,240,240)',
-//     },
-//     thumbnail: {
-//       width: 100,
-//       height: 100,
-//       marginRight: 5,
-//       backgroundColor: 'black',
-//     },
-//     rightContainer: {
-//       flex: 1,
-//       padding: 5,
-//       height: 100,
-//     },
-//     title: {
-//       fontSize: 16,
-//       fontWeight: 'bold',
-//       marginBottom: 3,
-//     },
-//     subtitle: {
-//       fontSize: 12,
-//     },
-//     separator: {
-//       height: 1,
-//       backgroundColor: 'rgb(200,200,200)',
-//     },
-//     listView: {
-//       backgroundColor: 'rgb(240,240,240)',
-//     },
-//     loading: {
-//       flex: 1,
-//       justifyContent: 'center',
-//       alignItems: 'center',
-//     },
-//   });
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      flexDirection: 'row',
+      backgroundColor: 'rgb(240,240,240)',
+    },
+    thumbnail: {
+      width: 100,
+      height: 100,
+      marginRight: 5,
+      backgroundColor: 'black',
+    },
+    rightContainer: {
+      flex: 1,
+      padding: 5,
+      height: 100,
+    },
+    title: {
+      fontSize: 16,
+      fontWeight: 'bold',
+      marginBottom: 3,
+    },
+    subtitle: {
+      fontSize: 12,
+    },
+    separator: {
+      height: 1,
+      backgroundColor: 'rgb(200,200,200)',
+    },
+    listView: {
+      backgroundColor: 'rgb(240,240,240)',
+    },
+    loading: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  });
 
 
 export default VideoList;
